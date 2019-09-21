@@ -9,3 +9,12 @@ h1 {
 h2{
   color: #952A37;
 }
+
+table#data {
+  table-layout: fixed;
+  width: 100%;
+}
+
+table#data td{
+  width = 20%;
+}
