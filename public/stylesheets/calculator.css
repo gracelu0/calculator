@@ -12,8 +12,14 @@ h2{
 
 #data {
   table-layout: fixed;
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
+}
+
+#data th{
+  width = 20%;
+  padding: 5px;
+  vertical-align: middle;
 }
 
 #data td{
