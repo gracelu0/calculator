@@ -9,38 +9,38 @@
   <body>
     <h1>Grade Calculator</h1>
     <table border="1" bgcolor="dfe8ed">
-    <tr>
-      <h2>Activities</h2>
-    </tr>
-    <tr>
-      <h4>Give grades to the numeric activities</h4>
-    </tr>
-    <tr>
-      <table border="1" id="data">
-        <tr bgcolor="#DEDEE0">
-          <th align="left">Name</th>
-          <th align="left">Short Name</th>
-          <th align="left">Weight</th>
-          <th align="left">Grade</th>
-          <th align="left">Percent</th>
-        </tr>
-        <tr>
-          <td>Activity 1</td>
-          <td>A1</td>
-          <td>
-            <form>
-            <input type="text" size="5" id="a1weight">
-            </form>
-          </td>
-          <td>
-            <form class="form-inline">
-            <input type="text" size="5" id="a1mark">/<br>
-            </form>
+      <tr>
+        <th align="left" id="headings">Activities</th>
+      </tr>
+      <tr>
+        <th align="left" id="instruct">Give grades to the numeric activities:</th>
+      </tr>
+      <tr>
+        <table border="1" id="data">
+          <tr bgcolor="#DEDEE0">
+            <th align="left">Name</th>
+            <th align="left">Short Name</th>
+            <th align="left">Weight</th>
+            <th align="left">Grade</th>
+            <th align="left">Percent</th>
+          </tr>
+          <tr>
+            <td>Activity 1</td>
+            <td>A1</td>
+            <td>
+              <form>
+              <input type="text" size="5" id="a1weight">
+              </form>
+            </td>
+            <td>
+              <form class="form-inline">
+              <input type="text" size="5" id="a1mark">/<br>
+              </form>
 
-            <form>
-            <input type="text" size="5" id="a1total">
-            </form>
-          </td>
+              <form>
+              <input type="text" size="5" id="a1total">
+              </form>
+            </td>
         </tr>
 
         <tr>
@@ -53,9 +53,8 @@
           </td>
           <td>
             <form class="form-inline">
-            <input type="text" size="5" id="a2mark">
+            <input type="text" size="5" id="a2mark">/<br>
             </form>
-            <p>/</p><br>
             <form>
             <input type="text" size="5" id="a2total">
             </form>
@@ -72,9 +71,8 @@
           </td>
           <td>
             <form class="form-inline">
-            <input type="text" size="5" id="a3mark">
+            <input type="text" size="5" id="a3mark">/<br>
             </form>
-            <p>/</p><br>
             <form>
             <input type="text" size="5" id="a3total">
             </form>
@@ -91,9 +89,8 @@
           </td>
           <td>
             <form class="form-inline">
-            <input type="text" size="5" id="a4mark">
+            <input type="text" size="5" id="a4mark">/<br>
             </form>
-            <p>/</p><br>
             <form>
             <input type="text" size="5" id="a4total">
             </form>
@@ -102,7 +99,7 @@
       </table>
     </tr>
     <tr>
-      <h2>Result</h2>
+      <th align="left" id="headings">Result</th>
     </tr>
     <tr>
       <td colspan="5" align="right">

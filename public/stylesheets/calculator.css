@@ -6,11 +6,11 @@ h1 {
   font-family: "Helvetica Neue",Arial, sans-serif;
 }
 
-h2{
+#headings{
   color: #CC0633;
 }
 
-h2,h4,#data td, #data th{
+#headings,#instruct,#data td, #data th{
   font-family: "Georgia", Cambria, serif;
 }
 
