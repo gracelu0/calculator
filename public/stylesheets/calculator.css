@@ -3,31 +3,38 @@ body{
 }
 
 h1 {
-  font-family: "Helvetica Neue",Arial, sans-serif;
+  font-family: "Helvetica Neue Light",Arial, sans-serif;
 }
 
 #headings{
+  font-size: 20px;
   color: #CC0633;
 }
 
-#headings,#instruct,#data td, #data th{
+#headings,#instruct,#inner td, #inner th{
   font-family: "Georgia", Cambria, serif;
 }
 
-#data {
+#outer{
+  table-layout: fixed;
+  width: 65%;
+
+}
+
+#inner {
   table-layout: fixed;
   width: 65%;
   border-collapse: collapse;
   border: 1px solid #c9c9c9;
 }
 
-#data th{
+#inner th{
   width = 20%;
   padding: 5px;
   vertical-align: middle;
 }
 
-#data td{
+#inner td{
   width = 20%;
   padding-left: 5px;
   padding-top: 20px;
