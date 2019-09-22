@@ -49,10 +49,14 @@ h1 {
   font-family: "Arial", sans-serif;
   color: white;
   font-size: 15px;
-  padding: 16px 24px;
+  padding: 12px 14px;
 }
 
 #weighted:hover, #mean:hover{
   background-color: white;
   color: black;
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+  padding: 12px 14px;
+  cursor:pointer;
 }
