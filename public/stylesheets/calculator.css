@@ -34,3 +34,9 @@ h2,h4,#data td, #data th{
   padding-bottom: 20px;
   vertical-align: middle;
 }
+
+#weighted,#mean{
+  background-color: #952A37;
+  font-family: "Arial", sans-serif;
+  color: white;
+}
