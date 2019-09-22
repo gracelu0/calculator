@@ -25,7 +25,7 @@ h1 {
 
 #inner {
   table-layout: fixed;
-  width: 65%;
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid #c9c9c9;
 }
@@ -50,13 +50,10 @@ h1 {
   color: white;
   font-size: 15px;
   padding: 12px 14px;
+  display: inline-block;
 }
 
 #weighted:hover, #mean:hover{
-  background-color: white;
-  color: black;
-  font-family: "Arial", sans-serif;
-  font-size: 15px;
-  padding: 12px 14px;
+  background-color: LightCoral;
   cursor:pointer;
 }
