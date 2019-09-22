@@ -48,4 +48,11 @@ h1 {
   background-color: #CC0633;
   font-family: "Arial", sans-serif;
   color: white;
+  font-size: 15px;
+  padding: 16px 24px;
+}
+
+#weighted:hover, #mean:hover{
+  background-color: white;
+  color: black;
 }
