@@ -7,7 +7,7 @@ h1 {
 }
 
 #headings{
-  font-size: 20px;
+  font-size: 18px;
   color: #CC0633;
 }
 
@@ -16,8 +16,7 @@ h1 {
 }
 
 #outer{
-  table-layout: fixed;
-  width: 65%;
+  width: 100%;
 
 }
 
