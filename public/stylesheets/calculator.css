@@ -3,11 +3,11 @@ body{
 }
 
 h1 {
-  font-family: "Helvetica",Arial, sans-serif;
+  font-family: "Helvetica Neue",Arial, sans-serif;
 }
 
 h2{
-  color: #952A37;
+  color: #CC0633;
 }
 
 h2,h4,#data td, #data th{
@@ -36,7 +36,7 @@ h2,h4,#data td, #data th{
 }
 
 #weighted,#mean{
-  background-color: #952A37;
+  background-color: #CC0633;
   font-family: "Arial", sans-serif;
   color: white;
 }
