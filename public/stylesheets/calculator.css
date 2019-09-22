@@ -53,6 +53,10 @@ h1 {
   display: inline-block;
 }
 
+#sub{
+    display: inline-block;
+}
+
 #weighted:hover, #mean:hover{
   background-color: LightCoral;
   cursor:pointer;
