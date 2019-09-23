@@ -11,7 +11,7 @@ h1 {
   color: #CC0633;
 }
 
-#headings,#instruct,#inner td, #inner th{
+#headings,#instruct, #result,#inner td, #inner th{
   font-family: "Georgia", Cambria, serif;
 }
 
