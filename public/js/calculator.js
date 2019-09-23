@@ -15,7 +15,7 @@ function calculateMean(){
   var mean = 0;
   console.log(allTotals.length);
   for (i = 0; i < allTotals.length;i++){
-    sumOfMeans+=calculatePercentage(allMarks[i],allTotals[i]);
+    sumOfMeans+=calculatePercentage(allMarks[i].value,allTotals[i].value);
     console.log(sumOfMeans);
   }
   mean = sumOfMeans/allTotals.length;
