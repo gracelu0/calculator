@@ -31,16 +31,16 @@
             <td>A1</td>
             <td>
               <form>
-              <input type="number" style="font-size:16pt;" size="8"  id="a1weight">
+              <input type="number" min="0" style="font-size:16pt;" size="8"  id="a1weight">
               </form>
             </td>
             <td>
               <form class="form-inline">
-              <input type="number" style="font-size:16pt;" size="8"  id="a1mark">/<br>
+              <input type="number" min="0" style="font-size:16pt;" size="8" name="mark" id="a1mark">/<br>
               </form>
 
               <form>
-              <input type="number" style="font-size:16pt;" size="8"  id="a1total">
+              <input type="number" min="0" style="font-size:16pt;" size="8" name="total" id="a1total">
               </form>
             </td>
             <td>
@@ -53,15 +53,15 @@
           <td>A2</td>
           <td>
             <form>
-            <input type="number" style="font-size:16pt;" size="8"  id="a2weight">
+            <input type="number" min="0" style="font-size:16pt;" size="8"  id="a2weight">
             </form>
           </td>
           <td>
             <form class="form-inline">
-            <input type="number" style="font-size:16pt;" size="8"  id="a2mark">/<br>
+            <input type="number" min="0" style="font-size:16pt;" size="8" name="mark" id="a2mark">/<br>
             </form>
             <form>
-            <input type="number" style="font-size:16pt;" size="8"  id="a2total">
+            <input type="number" min="0" style="font-size:16pt;" size="8" name="total" id="a2total">
             </form>
           </td>
           <td>
@@ -73,15 +73,15 @@
           <td>A3</td>
           <td>
             <form>
-            <input type="number" style="font-size:16pt;" size="8"  id="a3weight">
+            <input type="number" min="0" style="font-size:16pt;" size="8"  id="a3weight">
             </form>
           </td>
           <td>
             <form class="form-inline">
-            <input type="number" style="font-size:16pt;" size="8"  id="a3mark">/<br>
+            <input type="number" min="0" style="font-size:16pt;" size="8" name="mark" id="a3mark">/<br>
             </form>
             <form>
-            <input type="number" style="font-size:16pt;" size="8"  id="a3total">
+            <input type="number" min="0" style="font-size:16pt;" size="8" name="total" id="a3total">
             </form>
           </td>
           <td>
@@ -93,15 +93,15 @@
           <td>A4</td>
           <td>
             <form>
-            <input type="number" style="font-size:16pt;" size="8"  id="a4weight">
+            <input type="number" min="0" style="font-size:16pt;" size="8"  id="a4weight">
             </form>
           </td>
           <td>
             <form class="form-inline">
-            <input type="number" style="font-size:16pt;" size="8"  id="a4mark">/<br>
+            <input type="number" min="0" style="font-size:16pt;" size="8" name="mark" id="a4mark">/<br>
             </form>
             <form>
-            <input type="number" style="font-size:16pt;" size="8"  id="a4total">
+            <input type="number" min="0" style="font-size:16pt;" size="8" name="total" id="a4total">
             </form>
           </td>
           <td>
@@ -112,7 +112,9 @@
     </tr>
     <tr>
       <th align="left" id="headings">Result</th>
-      <p id="result">result goes here</p>
+      <td>
+        <p id="result">result goes here</p>
+      </td>
     </tr>
     <tr>
       <td align="right">
