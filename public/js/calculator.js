@@ -13,10 +13,13 @@ function calculateMean(){
   var allTotals = document.getElementsByName("total");
   var sumOfMeans = 0;
   var mean = 0;
+  console.log(allTotals.length);
   for (i = 0; i < allTotals.length;i++){
     sumOfMeans+=calculatePercentage(allMarks[i],allTotals[i]);
+    console.log(sumOfMeans);
   }
   mean = sumOfMeans/allTotals.length;
+  console.log(mean);
   document.getElementById("result").innerHTML = mean;
 
 }
