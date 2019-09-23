@@ -15,12 +15,14 @@ function calculateMean(){
   var mean = 0;
   console.log(allTotals.length);
   for (i = 0; i < allTotals.length;i++){
-    sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
-    console.log(sumOfMeans);
+    if (allMarks[i].value != '' && allTotals[i].value != ''){
+      sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
+      console.log(sumOfMeans);
+    }
   }
   mean = sumOfMeans/allTotals.length;
   console.log(mean);
-  document.getElementById("result").innerHTML = mean;
+  document.getElementById("result").innerHTML = "Mean of your grades is:"+ mean;
 
 }
 
