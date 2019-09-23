@@ -1,4 +1,4 @@
-var b = document.getElementById("weighted");
-b.onclick = function(){ //only function associated, don't need to name
-  window.alert("HELP");
-}
+document.getElementById("weighted").addEventListener('click', function(){
+  document.getElementById("para").innerHTML = "FIRST PARA";
+  console.log("you clicked me!"); //outputting to console (debugging)
+});
