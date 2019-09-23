@@ -61,3 +61,7 @@ h1 {
   background-color: LightCoral;
   cursor:pointer;
 }
+
+input[type=number]{
+  width: 25px;
+}
