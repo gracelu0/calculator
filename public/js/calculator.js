@@ -12,7 +12,6 @@ var percent1 = calculatePercentage(mark1, total1);
 
 
 document.getElementById("mean").addEventListener('click', function(){
-  window.alert("you clicked me!"); //outputting to console (debugging)
   document.getElementById("p1").innerHTML = percent1;
   document.getElementById("result").innerHTML = percent1;
 });
