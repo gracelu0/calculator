@@ -2,11 +2,15 @@ html{
   background-color: #A6192E;
 }
 body{
+  margin: 0% 15% 20% 15%;
   background-color: white;
   padding-left: 20px;
+  padding-top: 60px;
 }
 
 h1 {
+  border-top: 20px solid #54585A;
+  border-bottom: 30px solid #54585A;
   font-family: "Helvetica Neue Light",Arial, sans-serif;
 }
 
