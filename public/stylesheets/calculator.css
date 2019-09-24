@@ -1,5 +1,9 @@
-body{
+html{
   background-color: "#A6192E";
+}
+
+body{
+  background-color: white;
 }
 
 h1 {
