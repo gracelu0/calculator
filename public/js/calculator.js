@@ -56,7 +56,7 @@ function calculateWeighted(){
 
 }
 
-function clearAll(){
+function clearFields(){
   var userInputs = document.getElementsByTagName("input");
   console.log(userInputs.length);
   for (var i = 0; i < userInputs.length; i++){
