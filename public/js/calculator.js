@@ -57,9 +57,19 @@ function calculateWeighted(){
 }
 
 function clearFields(){
-  var userInputs = document.getElementsByTagName("input");
-  console.log(userInputs.length);
-  for (var i = 0; i < userInputs.length; i++){
-      userInputs[i].value = '';
+  var allMarks = document.getElementsByName("mark");
+  var allTotals = document.getElementsByName("total");
+  var allWeights = document.getElementsByName("weight");
+
+  for (var i = 0; i < allMarks.length; i++){
+      allMarks[i].value = '';
+    }
+
+  for (var j = 0; j < allTotals.length; j++){
+      allTotals[j].value = '';
+    }
+    
+  for (var  k= 0; k < allWeights.length; k++){
+      allWeights[k].value = '';
     }
   }
