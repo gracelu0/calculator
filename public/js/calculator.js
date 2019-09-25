@@ -63,5 +63,3 @@ function clearAll(){
       userInputs[i].value = '';
     }
   }
-
-}
