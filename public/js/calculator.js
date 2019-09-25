@@ -14,6 +14,7 @@ function calculateMean(){
   var numOfGrades = 0;
   var sumOfMeans = 0;
   var mean = 0;
+  var meanPercent = "";
   console.log(allTotals.length);
 
   for (i = 0; i < allTotals.length;i++){
@@ -24,6 +25,7 @@ function calculateMean(){
     }
   }
   mean = sumOfMeans/numOfGrades;
+  meanPercent = String(mean*100)+"%";
   console.log(mean);
   document.getElementById("result").innerHTML = "Mean of your grades is: "+ mean;
 
@@ -36,6 +38,7 @@ function calculateWeighted(){
   var totalWeight = 0;
   var sum = 0;
   var weighted = 0;
+  var weightedPercent = "";
 
   for (i = 0; i < allTotals.length;i++){
     if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
@@ -46,8 +49,18 @@ function calculateWeighted(){
     }
   }
   weighted = sum/totalWeight;
+  weightedPercent = String(weighted*100)+"%";
   console.log(weighted);
   document.getElementById("result").innerHTML = "Your weighted grade is: "+ weighted;
 
+}
+
+function clearAll(){
+  var userInputs = document.getElementsByTagName("input");
+  for (var i = 0; i < userInputs.length; i++){
+    if (userInputs[i].type == 'text'){
+      userInputs[i].value = '';
+    }
+  }
 
 }
