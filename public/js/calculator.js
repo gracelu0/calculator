@@ -2,9 +2,10 @@ function calculatePercentage(num,denom){
   console.log(num);
   console.log(denom);
   var percentage = num/denom;
-  roundedPercent = percentage.toFixed(2);
-  console.log(roundedPercent);
-  return roundedPercent;
+  return percentage;
+  //roundedPercent = percentage.toFixed(2);
+  //console.log(roundedPercent);
+  //return roundedPercent;
 }
 
 //Need to do error checking! (e.g. total=0, negatives)
@@ -25,7 +26,7 @@ function calculateMean(){
     }
   }
   mean = sumOfMeans/numOfGrades;
-  meanPercent = String(mean*100)+"%";
+  meanPercent = String((mean*100).toFixed(2))+"%";
   console.log(mean);
   document.getElementById("result").innerHTML = "Mean of your grades is: "+ meanPercent;
 
@@ -49,7 +50,7 @@ function calculateWeighted(){
     }
   }
   weighted = sum/totalWeight;
-  weightedPercent = String(weighted*100)+"%";
+  weightedPercent = String((weighted*100).toFixed(2))+"%";
   console.log(weighted);
   document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
 
