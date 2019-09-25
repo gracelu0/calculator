@@ -59,7 +59,6 @@ function calculateWeighted(){
 function clearAll(){
   var userInputs = document.getElementsByTagName("input");
   for (var i = 0; i < userInputs.length; i++){
-    if (userInputs[i].type == 'number'){
       userInputs[i].value = '';
     }
   }
