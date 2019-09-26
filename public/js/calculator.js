@@ -28,6 +28,9 @@ function checkWeights(){
       allWeights[k].style.border = "1px solid red";
       error = 1;
     }
+    else{
+      allWeights[k].style.border = "";
+    }
   }
   if (error == 1){
     alert("Please fill in all weights with values > 0");
@@ -38,7 +41,7 @@ function checkWeights(){
 
 function validateGrades(){
   for (var i = 0; i < allTotals.length; i++){
-    if ((aMark < 0) || (aTotal <= 0)){
+    if ((allMarks[i].value < 0) || (allTotals[i].value <= 0)){
       //alert("Please enter a positive number");
       return false;
     }
