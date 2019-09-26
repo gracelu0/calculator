@@ -31,6 +31,18 @@ function checkWeight(aWeight){
   }
 }
 
+function checkWeights(){
+  var allWeights = document.getElementsByName("weight");
+  for (k = 0; k < allWeights.length; k++){
+    if (allWeights[k].value < 0 || allWeights[k].value == ''){
+      allWeights[k].style.border = "1px solid red";
+    }
+    else{
+      allWeights[k].style.border = "";
+    }
+  }
+}
+
 //Need to do error checking! (e.g. total=0, negatives)
 function calculateMean(){
   var allMarks = document.getElementsByName("mark");
@@ -65,15 +77,16 @@ function calculateWeighted(){
   var weightedPercent = "";
 
   //check if weight negative or empty
-  for (k = 0; k < allWeights.length; k++){
-    checkWeight(allWeights[k]);
-    // if (allWeights[k].value < 0 || allWeights[k].value == ''){
-    //   allWeights[k].style.border = "1px solid red";
-    // }
-    // else{
-    //   allWeights[k].style.border = "";
-    // }
-  }
+  checkWeights();
+  // for (k = 0; k < allWeights.length; k++){
+  //   checkWeight(allWeights[k]);
+  //   if (allWeights[k].value < 0 || allWeights[k].value == ''){
+  //     allWeights[k].style.border = "1px solid red";
+  //   }
+  //   else{
+  //     allWeights[k].style.border = "";
+  //   }
+  // }
 
   for (i = 0; i < allTotals.length;i++){
     if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
@@ -173,7 +186,7 @@ function percent4(){
   allTotals[2].oninput = percent3;
   allTotals[3].oninput = percent4;
 
-  allWeights[0].oninput = checkWeight(this);
-  allWeights[1].oninput = checkWeight(this);
-  allWeights[2].oninput = checkWeight(this);
+  allWeights[0].oninput = checkWeight;
+  allWeights[1].oninput = checkWeight;
+  allWeights[2].oninput = checkWeight;
   allWeights[3].oninput = checkWeight;
