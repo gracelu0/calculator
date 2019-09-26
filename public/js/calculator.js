@@ -27,12 +27,8 @@ function checkWeights(){
   var error = 0;
   for (k = 0; k < allWeights.length; k++){
     if (allWeights[k].value <= 0 || allWeights[k].value == ''){
-      //allWeights[k].style.border = "1px solid red";
       error = 1;
     }
-    // else{
-    //   allWeights[k].style.border = "";
-    // }
   }
   if (error == 1){
     alert("Please fill in all weights with values > 0");
@@ -41,7 +37,6 @@ function checkWeights(){
   return true;
 }
 
-//Need to do error checking! (e.g. total=0, negatives)
 function calculateMean(){
   var allMarks = document.getElementsByName("mark");
   var allTotals = document.getElementsByName("total");
@@ -126,7 +121,7 @@ function percent1(){
       allPers[0].innerHTML = pString;
     }
     else{
-          allPers[0].innerHTML = '';
+      allPers[0].innerHTML = '';
     }
 
 }
@@ -137,6 +132,9 @@ function percent2(){
     var pString= String((p*100).toFixed(2))+"%";
     allPers[1].innerHTML = pString;
   }
+  else{
+    allPers[1].innerHTML = '';
+  }
 }
 
 function percent3(){
@@ -145,15 +143,16 @@ function percent3(){
     var pString= String((p*100).toFixed(2))+"%";
     allPers[2].innerHTML = pString;
   }
+  else{
+      allPers[2].innerHTML = '';
+  }
 }
 
 function percent4(){
   if (checkNegative(allMarks[3].value,allTotals[3].value)){
-  //  if (allMarks[3].value!= '' && allTotals[3].value!= ''){
-      var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
-      var pString= String((p*100).toFixed(2))+"%";
-      allPers[3].innerHTML = pString;
-  //  }
+    var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    allPers[3].innerHTML = pString;
   }
   else{
       allPers[3].innerHTML = '';
