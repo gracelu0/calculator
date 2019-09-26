@@ -44,7 +44,7 @@ function calculateMean(){
   var sumOfMeans = 0;
   var mean = 0;
   var meanPercent = "";
-  console.log(allTotals.length);
+  var error = 0;
 
   for (i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
@@ -52,11 +52,20 @@ function calculateMean(){
       numOfGrades++;
       console.log(sumOfMeans);
     }
+    else{
+      error = 1;
+    }
   }
-  mean = sumOfMeans/numOfGrades;
-  meanPercent = String((mean*100).toFixed(2))+"%";
-  console.log(mean);
-  document.getElementById("result").innerHTML = "Mean of your grades is: "+ meanPercent;
+  if (error = 0){
+    mean = sumOfMeans/numOfGrades;
+    meanPercent = String((mean*100).toFixed(2))+"%";
+    console.log(mean);
+    document.getElementById("result").innerHTML = "Mean of your grades is: "+ meanPercent;
+  }
+  else{
+    document.getElementById("result").innerHTML = "error: invalid input";
+  }
+
 
 }
 
@@ -84,7 +93,10 @@ function calculateWeighted(){
     console.log(weighted);
     document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
-  document.getElementById("result").innerHTML = 'Error: invalid weights entered';
+  else{
+    document.getElementById("result").innerHTML = 'Error: invalid weights entered';
+  }
+
 }
 
 function clearFields(){
