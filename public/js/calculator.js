@@ -89,10 +89,12 @@ function clearFields(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  while (true){
-    for (var i = 0; i<allTotals.length;i++){
-      var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
-      var pString= String((p*100).toFixed(2))+"%";
-      allTotals[i].onchange = displayPercentage(pString,allPers[i]);
-    }
-  }
+  var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
+  var pString= String((p*100).toFixed(2))+"%";
+  allTotals[0].onchange = displayPercentage(pString,allPers[0]);
+
+  // for (var i = 0; i<allTotals.length;i++){
+  //     var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
+  //     var pString= String((p*100).toFixed(2))+"%";
+  //     allTotals[i].onchange = displayPercentage(pString,allPers[i]);
+  // }
