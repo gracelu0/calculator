@@ -25,7 +25,7 @@ function checkWeights(){
   var allWeights = document.getElementsByName("weight");
   var error = 0;
   for (k = 0; k < allWeights.length; k++){
-    if (allWeights[k].value <= 0){
+    if (allWeights[k].value != '' && allWeights[k].value <= 0){
       error = 1;
     }
     else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
