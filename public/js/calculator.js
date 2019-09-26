@@ -13,6 +13,15 @@ function displayPercentage(aMark,aTotal,box){
   console.log(pString);
   box.innerHTML = pString;
 }
+
+function checkNegative(aMark,aTotal){
+  if ((aMark < 0) || (aTotal <= 0)){
+    alert("Please enter a positive number");
+    return false;
+  }
+  return true;
+}
+
 //Need to do error checking! (e.g. total=0, negatives)
 function calculateMean(){
   var allMarks = document.getElementsByName("mark");
@@ -45,6 +54,17 @@ function calculateWeighted(){
   var sum = 0;
   var weighted = 0;
   var weightedPercent = "";
+
+  //check if weight negative or empty
+  for (k = 0; k < allWeights.length; k++){
+
+    if (allWeights[k].value < 0 || allWeights[k].value == ''){
+      allWeights[k].style.border = "1px solid red";
+    }
+    else{
+      allWeights[k].style.border = "";
+    }
+  }
 
   for (i = 0; i < allTotals.length;i++){
     if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
@@ -83,43 +103,42 @@ function clearFields(){
     allPers[p].innerHTML = '';
   }
   }
-function checkNegative(aMark,aTotal){
-  if ((aMark < 0) || (aTotal < 0)){
-    alert("Please enter a positive number");
-    return false;
-  }
-  return true;
-}
+
 
 function percent1(){
     if (checkNegative(allMarks[0].value,allTotals[0].value)){
       var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
       var pString= String((p*100).toFixed(2))+"%";
-      console.log(pString);
       allPers[0].innerHTML = pString;
     }
 
 }
 
 function percent2(){
-  var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
-  var pString= String((p*100).toFixed(2))+"%";
-  console.log(pString);
-  allPers[1].innerHTML = pString;
+  if (checkNegative(allMarks[1].value,allTotals[1].value)){
+    var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    allPers[1].innerHTML = pString;
+  }
 }
 
 function percent3(){
-  var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
-  var pString= String((p*100).toFixed(2))+"%";
-  console.log(pString);
-  allPers[2].innerHTML = pString;
+  if (checkNegative(allMarks[2].value,allTotals[2].value)){
+    var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    allPers[2].innerHTML = pString;
+  }
 }
 
 function percent4(){
-  var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
-  var pString= String((p*100).toFixed(2))+"%";
-  console.log(pString);
-  allPers[3].innerHTML = pString;
+  if (checkNegative(allMarks[3].value,allTotals[3].value)){
+    var pString = '';
+    if (allMarks[3].value!= '' && allTotals[3].value!= ''){
+      var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
+      pString= String((p*100).toFixed(2))+"%";
+    }
+    allPers[3].innerHTML = pString;
+  }
 }
 
 
