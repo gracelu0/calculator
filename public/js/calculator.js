@@ -85,6 +85,7 @@ function clearFields(){
   }
 function checkNegative(aMark,aTotal){
   if ((aMark < 0) || (aTotal < 0)){
+    alert("Please enter a positive number");
     return false;
   }
   return true;
