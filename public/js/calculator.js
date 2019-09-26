@@ -84,6 +84,33 @@ function clearFields(){
   }
   }
 
+function percent1(){
+    var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    console.log(pString);
+    allPers[0].innerHTML = pString;
+}
+
+function percent2(){
+  var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
+  var pString= String((p*100).toFixed(2))+"%";
+  console.log(pString);
+  allPers[1].innerHTML = pString;
+}
+
+function percent3(){
+  var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
+  var pString= String((p*100).toFixed(2))+"%";
+  console.log(pString);
+  allPers[2].innerHTML = pString;
+}
+
+function percent4(){
+  var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
+  var pString= String((p*100).toFixed(2))+"%";
+  console.log(pString);
+  allPers[3].innerHTML = pString;
+}
 
   var meanButton = document.getElementById("mean");
   var weightedButton = document.getElementById("weighted");
@@ -97,33 +124,15 @@ function clearFields(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  allTotals[0].oninput = function(){
-    var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    console.log(pString);
-    allPers[0].innerHTML = pString;
-  }
+  allMarks[0].oninput = percent1;
+  allMarks[1].oninput = percent2;
+  allMarks[2].oninput = percent3;
+  allMarks[3].oninput = percent4;
 
-  allTotals[1].oninput = function(){
-    var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    console.log(pString);
-    allPers[1].innerHTML = pString;
-  }
-
-  allTotals[2].oninput = function(){
-    var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    console.log(pString);
-    allPers[2].innerHTML = pString;
-  }
-
-  allTotals[3].oninput = function(){
-    var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    console.log(pString);
-    allPers[3].innerHTML = pString;
-  }
+  allTotals[0].oninput = percent1;
+  allTotals[1].oninput = percent2;
+  allTotals[2].oninput = percent3;
+  allTotals[3].oninput = percent4;
 
   // for (var i = 0; i<allTotals.length;i++){
   //     var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
