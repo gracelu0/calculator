@@ -26,7 +26,10 @@ function checkWeights(){
   var allWeights = document.getElementsByName("weight");
   var error = 0;
   for (k = 0; k < allWeights.length; k++){
-    if (allWeights[k].value <= 0 || allWeights[k].value == ''){
+    if (allWeights[k].value <= 0){
+      error = 1;
+    }
+    else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
       error = 1;
     }
   }
@@ -63,6 +66,7 @@ function calculateMean(){
     document.getElementById("result").innerHTML = "Mean of your grades is: "+ meanPercent;
   }
   else{
+    alert("Please enter positive values");
     document.getElementById("result").innerHTML = "error: invalid input";
   }
 
@@ -70,9 +74,9 @@ function calculateMean(){
 }
 
 function calculateWeighted(){
-  var allMarks = document.getElementsByName("mark");
-  var allTotals = document.getElementsByName("total");
-  var allWeights = document.getElementsByName("weight");
+  // var allMarks = document.getElementsByName("mark");
+  // var allTotals = document.getElementsByName("total");
+  // var allWeights = document.getElementsByName("weight");
   var totalWeight = 0;
   var sum = 0;
   var weighted = 0;
@@ -94,15 +98,15 @@ function calculateWeighted(){
     document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
   else{
-    document.getElementById("result").innerHTML = 'Error: invalid weights entered';
+    document.getElementById("result").innerHTML = 'Error: invalid weights';
   }
 
 }
 
 function clearFields(){
-  var allMarks = document.getElementsByName("mark");
-  var allTotals = document.getElementsByName("total");
-  var allWeights = document.getElementsByName("weight");
+  // var allMarks = document.getElementsByName("mark");
+  // var allTotals = document.getElementsByName("total");
+  // var allWeights = document.getElementsByName("weight");
   var allPers = document.getElementsByName("per");
 
   for (var i = 0; i < allMarks.length; i++){
@@ -180,6 +184,7 @@ function percent4(){
   weightedButton.onclick = calculateWeighted;
   clearButton.onclick = clearFields;
 
+  var allWeights = document.getElementsByName("weight");
   var allMarks = document.getElementsByName("mark");
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
