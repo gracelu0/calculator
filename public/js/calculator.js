@@ -30,6 +30,7 @@ function checkWeights(){
       error = 1;
     }
     else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
+      allWeights[k].setCustomValidity("Invalid field.");
       error = 1;
     }
   }
