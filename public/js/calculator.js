@@ -99,6 +99,27 @@ function clearFields(){
     allPers[0].innerHTML = pString;
   }
 
+  allTotals[1].oninput = function(){
+    var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    console.log(pString);
+    allPers[1].innerHTML = pString;
+  }
+
+  allTotals[2].oninput = function(){
+    var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    console.log(pString);
+    allPers[2].innerHTML = pString;
+  }
+
+  allTotals[3].oninput = function(){
+    var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    console.log(pString);
+    allPers[3].innerHTML = pString;
+  }
+
   // for (var i = 0; i<allTotals.length;i++){
   //     var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
   //     var pString= String((p*100).toFixed(2))+"%";
