@@ -1,19 +1,12 @@
 function calculatePercentage(num,denom){
-  console.log(num);
-  console.log(denom);
   var percentage = num/denom;
   return percentage;
   //roundedPercent = percentage.toFixed(2);
   //console.log(roundedPercent);
   //return roundedPercent;
 }
-function displayPercentage(aMark,aTotal,box){
-  var p = calculatePercentage(aMark,aTotal);
-  var pString= String((p*100).toFixed(2))+"%";
-  box.innerHTML = pString;
-}
 
-function checkNegative(aMark,aTotal){
+function checkInputs(aMark,aTotal){
   if ((aMark < 0) || (aTotal <= 0) || (aMark == '') || (aTotal == '')){
     //alert("Please enter a positive number");
     return false;
@@ -43,6 +36,17 @@ function checkWeights(){
   return true;
 }
 
+function validateGrades(){
+  for (var i = 0; i < allTotals.length; i++){
+    if ((aMark < 0) || (aTotal <= 0)){
+      //alert("Please enter a positive number");
+      return false;
+    }
+  }
+      return true;
+}
+
+
 function calculateMean(){
   var numOfGrades = 0;
   var sumOfMeans = 0;
@@ -50,14 +54,15 @@ function calculateMean(){
   var meanPercent = "";
   var error = 0;
 
-  for (i = 0; i < allTotals.length;i++){
+  for (var i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
-      sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
-      numOfGrades++;
-      //console.log(sumOfMeans);
-    }
-    else{
-      error = 1;
+      if (validateGrades()){
+        sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
+        numOfGrades++;
+      }
+      else{
+        error = 1;
+      }
     }
   }
   if (error == 0){
@@ -80,7 +85,7 @@ function calculateWeighted(){
 
   //check if weight negative or empty
   if (checkWeights()){
-    for (i = 0; i < allTotals.length;i++){
+    for (var i = 0; i < allTotals.length;i++){
       if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
         grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
         sum+= parseFloat(grade*allWeights[i].value);
@@ -124,7 +129,7 @@ function clearFields(){
 
 
 function percent1(){
-    if (checkNegative(allMarks[0].value,allTotals[0].value)){
+    if (checkInputs(allMarks[0].value,allTotals[0].value)){
       var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
       var pString= String((p*100).toFixed(2))+"%";
       allPers[0].innerHTML = pString;
@@ -136,7 +141,7 @@ function percent1(){
 }
 
 function percent2(){
-  if (checkNegative(allMarks[1].value,allTotals[1].value)){
+  if (checkInputs(allMarks[1].value,allTotals[1].value)){
     var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
     var pString= String((p*100).toFixed(2))+"%";
     allPers[1].innerHTML = pString;
@@ -147,7 +152,7 @@ function percent2(){
 }
 
 function percent3(){
-  if (checkNegative(allMarks[2].value,allTotals[2].value)){
+  if (checkInputs(allMarks[2].value,allTotals[2].value)){
     var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
     var pString= String((p*100).toFixed(2))+"%";
     allPers[2].innerHTML = pString;
@@ -158,7 +163,7 @@ function percent3(){
 }
 
 function percent4(){
-  if (checkNegative(allMarks[3].value,allTotals[3].value)){
+  if (checkInputs(allMarks[3].value,allTotals[3].value)){
     var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
     var pString= String((p*100).toFixed(2))+"%";
     allPers[3].innerHTML = pString;
