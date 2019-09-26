@@ -16,7 +16,7 @@ function displayPercentage(aMark,aTotal,box){
 
 function checkNegative(aMark,aTotal){
   if ((aMark < 0) || (aTotal <= 0)){
-    alert("Please enter a positive number");
+    //alert("Please enter a positive number");
     return false;
   }
   return true;
@@ -26,7 +26,7 @@ function checkWeights(){
   var allWeights = document.getElementsByName("weight");
   var error = 0;
   for (k = 0; k < allWeights.length; k++){
-    if (allWeights[k].value < 0 || allWeights[k].value == ''){
+    if (allWeights[k].value <= 0 || allWeights[k].value == ''){
       allWeights[k].style.border = "1px solid red";
       error = 1;
     }
