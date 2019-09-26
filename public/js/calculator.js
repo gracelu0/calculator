@@ -101,6 +101,7 @@ function calculateWeighted(){
     console.log(weighted);
     document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
+  document.getElementById("result").innerHTML = 'error';
 }
 
 function clearFields(){
@@ -136,7 +137,7 @@ function percent1(){
       var pString= String((p*100).toFixed(2))+"%";
       allPers[0].innerHTML = pString;
     }
-
+    allPers[0].innerHTML = '';
 }
 
 function percent2(){
