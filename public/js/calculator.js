@@ -15,7 +15,7 @@ function displayPercentage(aMark,aTotal,box){
 }
 
 function checkNegative(aMark,aTotal){
-  if ((aMark < 0) || (aTotal <= 0)){
+  if ((aMark < 0) || (aTotal <= 0) || (aMark == '') || (aTotal == '')){
     //alert("Please enter a positive number");
     return false;
   }
@@ -76,18 +76,6 @@ function calculateWeighted(){
 
   //check if weight negative or empty
   if (checkWeights()){
-
-
-  // for (k = 0; k < allWeights.length; k++){
-  //   checkWeight(allWeights[k]);
-  //   if (allWeights[k].value < 0 || allWeights[k].value == ''){
-  //     allWeights[k].style.border = "1px solid red";
-  //   }
-  //   else{
-  //     allWeights[k].style.border = "";
-  //   }
-  // }
-
     for (i = 0; i < allTotals.length;i++){
       if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
         grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
@@ -101,7 +89,7 @@ function calculateWeighted(){
     console.log(weighted);
     document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
-  document.getElementById("result").innerHTML = 'error';
+  document.getElementById("result").innerHTML = 'Error: invalid weights entered';
 }
 
 function clearFields(){
@@ -137,7 +125,10 @@ function percent1(){
       var pString= String((p*100).toFixed(2))+"%";
       allPers[0].innerHTML = pString;
     }
-    allPers[0].innerHTML = '';
+    else{
+          allPers[0].innerHTML = '';
+    }
+
 }
 
 function percent2(){
@@ -158,12 +149,14 @@ function percent3(){
 
 function percent4(){
   if (checkNegative(allMarks[3].value,allTotals[3].value)){
-    var pString = '';
-    if (allMarks[3].value!= '' && allTotals[3].value!= ''){
+  //  if (allMarks[3].value!= '' && allTotals[3].value!= ''){
       var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
-      pString= String((p*100).toFixed(2))+"%";
-    }
-    allPers[3].innerHTML = pString;
+      var pString= String((p*100).toFixed(2))+"%";
+      allPers[3].innerHTML = pString;
+  //  }
+  }
+  else{
+      allPers[3].innerHTML = '';
   }
 }
 
