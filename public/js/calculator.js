@@ -176,7 +176,7 @@ function percent4(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  allMarks[0].oninput = percent1;
+  allMarks[0].onchange = percent1;
   allMarks[1].oninput = percent2;
   allMarks[2].oninput = percent3;
   allMarks[3].oninput = percent4;
