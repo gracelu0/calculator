@@ -68,8 +68,12 @@ function clearFields(){
   for (var j = 0; j < allTotals.length; j++){
       allTotals[j].value = '';
     }
-    
+
   for (var  k= 0; k < allWeights.length; k++){
       allWeights[k].value = '';
     }
   }
+
+
+  var meanButton = document.getElementById("mean");
+  meanButton.onclick = calculateMean;
