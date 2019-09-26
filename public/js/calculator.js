@@ -163,22 +163,17 @@ function percent4(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  // allMarks[0].oninput = percent1;
-  // allMarks[1].oninput = percent2;
-  // allMarks[2].oninput = percent3;
-  // allMarks[3].oninput = percent4;
-
-  allMarks[0].onchange = percent1;
-  allMarks[1].onchange = percent2;
-  allMarks[2].onchange = percent3;
-  allMarks[3].onchange = percent4;
+  allMarks[0].oninput = percent1;
+  allMarks[1].oninput = percent2;
+  allMarks[2].oninput = percent3;
+  allMarks[3].oninput = percent4;
 
   allTotals[0].oninput = percent1;
   allTotals[1].oninput = percent2;
   allTotals[2].oninput = percent3;
   allTotals[3].oninput = percent4;
 
-  allWeights[0].oninput = checkWeight;
-  allWeights[1].oninput = checkWeight;
-  allWeights[2].oninput = checkWeight;
+  allWeights[0].oninput = checkWeight(this);
+  allWeights[1].oninput = checkWeight(this);
+  allWeights[2].oninput = checkWeight(this);
   allWeights[3].oninput = checkWeight;
