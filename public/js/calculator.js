@@ -119,12 +119,15 @@ function clearFields(){
 
   for (var  k= 0; k < allWeights.length; k++){
       allWeights[k].value = '';
+      allWeights[k].style.border = "";
     }
 
   for (var p = 0; p < allPers.length; p++){
     allPers[p].innerHTML = '';
   }
-  }
+
+  document.getElementById("result").innerHTML = "";
+}
 
 
 function percent1(){
