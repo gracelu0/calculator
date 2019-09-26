@@ -76,4 +76,9 @@ function clearFields(){
 
 
   var meanButton = document.getElementById("mean");
+  var weightedButton = document.getElementById("weighted");
+  var clearButton = document.getElementById("clearAll");
+
   meanButton.onclick = calculateMean;
+  weightedButton.onclick = calculateWeighted;
+  clearButton.onclick = clearFields;
