@@ -92,5 +92,5 @@ function clearFields(){
   for (var i = 0; i<allTotals.length;i++){
     var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
     var pString= String((p*100).toFixed(2))+"%";
-    allTotals[i].onkeyup = displayPercentage(pString,allPers[i]);
+    allTotals[i].onchange = displayPercentage(pString,allPers[i]);
   }
