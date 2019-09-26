@@ -33,14 +33,21 @@ function checkWeight(aWeight){
 
 function checkWeights(){
   var allWeights = document.getElementsByName("weight");
+  var error = 0;
   for (k = 0; k < allWeights.length; k++){
     if (allWeights[k].value < 0 || allWeights[k].value == ''){
       allWeights[k].style.border = "1px solid red";
+      error = 1;
     }
     else{
       allWeights[k].style.border = "";
     }
   }
+  if (error == 1){
+    alert("Please fill in all weights (>0)");
+    return false;
+  }
+  return true;
 }
 
 //Need to do error checking! (e.g. total=0, negatives)
@@ -77,7 +84,9 @@ function calculateWeighted(){
   var weightedPercent = "";
 
   //check if weight negative or empty
-  checkWeights();
+  if (checkWeights()){
+
+
   // for (k = 0; k < allWeights.length; k++){
   //   checkWeight(allWeights[k]);
   //   if (allWeights[k].value < 0 || allWeights[k].value == ''){
@@ -88,19 +97,19 @@ function calculateWeighted(){
   //   }
   // }
 
-  for (i = 0; i < allTotals.length;i++){
-    if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
-      grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
-      sum+= parseFloat(grade*allWeights[i].value);
-      totalWeight+=parseFloat(allWeights[i].value);
-      console.log(sum);
+    for (i = 0; i < allTotals.length;i++){
+      if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
+        grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
+        sum+= parseFloat(grade*allWeights[i].value);
+        totalWeight+=parseFloat(allWeights[i].value);
+        console.log(sum);
+      }
     }
+    weighted = sum/totalWeight;
+    weightedPercent = String((weighted*100).toFixed(2))+"%";
+    console.log(weighted);
+    document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
-  weighted = sum/totalWeight;
-  weightedPercent = String((weighted*100).toFixed(2))+"%";
-  console.log(weighted);
-  document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
-
 }
 
 function clearFields(){
