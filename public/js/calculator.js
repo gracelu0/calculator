@@ -92,7 +92,12 @@ function clearFields(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  allTotals[0].onchange = displayPercentage(allMarks[0].value,allTotals[0].value,allPers[0]);
+  allTotals[0].oninput = function(){
+    var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    console.log(pString);
+    allPers[0].innerHTML = pString;
+  }
 
   // for (var i = 0; i<allTotals.length;i++){
   //     var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
