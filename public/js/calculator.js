@@ -27,12 +27,12 @@ function checkWeights(){
   var error = 0;
   for (k = 0; k < allWeights.length; k++){
     if (allWeights[k].value <= 0 || allWeights[k].value == ''){
-      allWeights[k].style.border = "1px solid red";
+      //allWeights[k].style.border = "1px solid red";
       error = 1;
     }
-    else{
-      allWeights[k].style.border = "";
-    }
+    // else{
+    //   allWeights[k].style.border = "";
+    // }
   }
   if (error == 1){
     alert("Please fill in all weights with values > 0");
