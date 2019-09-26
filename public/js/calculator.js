@@ -83,12 +83,21 @@ function clearFields(){
     allPers[p].innerHTML = '';
   }
   }
+function checkNegative(aMark,aTotal){
+  if ((aMark < 0) || (aTotal < 0)){
+    return false;
+  }
+  return true;
+}
 
 function percent1(){
-    var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    console.log(pString);
-    allPers[0].innerHTML = pString;
+    if (checkNegative(allMarks[0].value,allTotals[0].value)){
+      var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
+      var pString= String((p*100).toFixed(2))+"%";
+      console.log(pString);
+      allPers[0].innerHTML = pString;
+    }
+
 }
 
 function percent2(){
@@ -111,6 +120,7 @@ function percent4(){
   console.log(pString);
   allPers[3].innerHTML = pString;
 }
+
 
   var meanButton = document.getElementById("mean");
   var weightedButton = document.getElementById("weighted");
