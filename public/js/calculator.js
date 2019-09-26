@@ -1,9 +1,6 @@
 function calculatePercentage(num,denom){
   var percentage = num/denom;
   return percentage;
-  //roundedPercent = percentage.toFixed(2);
-  //console.log(roundedPercent);
-  //return roundedPercent;
 }
 
 function checkInputs(aMark,aTotal){
@@ -22,9 +19,9 @@ function checkWeights(){
       error = 1;
     }
     else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
-      console.log("k: ", k);
-      console.log(allMarks[k].value);
-      console.log(allTotals[k].value);
+      // console.log("k: ", k);
+      // console.log(allMarks[k].value);
+      // console.log(allTotals[k].value);
       allWeights[k].style.border = "1px solid red";
       error = 1;
     }
@@ -46,9 +43,8 @@ function validateGrades(){
       return false;
     }
   }
-      return true;
+    return true;
 }
-
 
 function calculateMean(){
   var numOfGrades = 0;
@@ -59,6 +55,7 @@ function calculateMean(){
 
   for (var i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
+      console.log("both non-empty, i: ", i);
       if (validateGrades()){
         sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
         numOfGrades++;
@@ -67,6 +64,7 @@ function calculateMean(){
         error = 1;
       }
     }
+    console.log("error: ",error);
   }
   if (error == 0){
     mean = sumOfMeans/numOfGrades;
@@ -200,3 +198,8 @@ function percent4(){
   allTotals[1].oninput = percent2;
   allTotals[2].oninput = percent3;
   allTotals[3].oninput = percent4;
+
+  // allWeights[0].oninput = checkWeights;
+  // allWeights[1].oninput = checkWeights;
+  // allWeights[2].oninput = checkWeights;
+  // allWeights[3].oninput = checkWeights;
