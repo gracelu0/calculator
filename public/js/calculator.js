@@ -186,7 +186,7 @@ function percent4(){
   allTotals[2].oninput = percent3;
   allTotals[3].oninput = percent4;
 
-  allWeights[0].oninput = checkWeight;
-  allWeights[1].oninput = checkWeight;
-  allWeights[2].oninput = checkWeight;
-  allWeights[3].oninput = checkWeight;
+  allWeights[0].oninput = checkWeights;
+  allWeights[1].oninput = checkWeights;
+  allWeights[2].oninput = checkWeights;
+  allWeights[3].oninput = checkWeights;
