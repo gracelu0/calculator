@@ -65,6 +65,7 @@ function clearFields(){
   var allMarks = document.getElementsByName("mark");
   var allTotals = document.getElementsByName("total");
   var allWeights = document.getElementsByName("weight");
+  var allPers = document.getElementsByName("per");
 
   for (var i = 0; i < allMarks.length; i++){
       allMarks[i].value = '';
@@ -77,6 +78,10 @@ function clearFields(){
   for (var  k= 0; k < allWeights.length; k++){
       allWeights[k].value = '';
     }
+
+  for (var p = 0; p < allPers.length; p++){
+    allPers[p].innerHTML = '';
+  }
   }
 
 
