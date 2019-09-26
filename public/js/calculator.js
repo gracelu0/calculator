@@ -10,7 +10,6 @@ function calculatePercentage(num,denom){
 function displayPercentage(aMark,aTotal,box){
   var p = calculatePercentage(aMark,aTotal);
   var pString= String((p*100).toFixed(2))+"%";
-  console.log(pString);
   box.innerHTML = pString;
 }
 
@@ -30,7 +29,10 @@ function checkWeights(){
       error = 1;
     }
     else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
-      allWeights[k].setCustomValidity("Invalid field.");
+      console.log("k: ", k, )
+      console.log(allMarks[k].value);
+      console.log(allTotals[k].value);
+      allWeights[k].style.border = "1px solid red";
       error = 1;
     }
   }
@@ -42,8 +44,6 @@ function checkWeights(){
 }
 
 function calculateMean(){
-  var allMarks = document.getElementsByName("mark");
-  var allTotals = document.getElementsByName("total");
   var numOfGrades = 0;
   var sumOfMeans = 0;
   var mean = 0;
@@ -54,30 +54,25 @@ function calculateMean(){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
       sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
       numOfGrades++;
-      console.log(sumOfMeans);
+      //console.log(sumOfMeans);
     }
     else{
       error = 1;
     }
   }
-  if (error = 0){
+  if (error == 0){
     mean = sumOfMeans/numOfGrades;
     meanPercent = String((mean*100).toFixed(2))+"%";
-    console.log(mean);
+    //console.log(mean);
     document.getElementById("result").innerHTML = "Mean of your grades is: "+ meanPercent;
   }
   else{
     alert("Please enter positive values");
     document.getElementById("result").innerHTML = "error: invalid input";
   }
-
-
 }
 
 function calculateWeighted(){
-  // var allMarks = document.getElementsByName("mark");
-  // var allTotals = document.getElementsByName("total");
-  // var allWeights = document.getElementsByName("weight");
   var totalWeight = 0;
   var sum = 0;
   var weighted = 0;
@@ -90,12 +85,12 @@ function calculateWeighted(){
         grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
         sum+= parseFloat(grade*allWeights[i].value);
         totalWeight+=parseFloat(allWeights[i].value);
-        console.log(sum);
+      //  console.log(sum);
       }
     }
     weighted = sum/totalWeight;
     weightedPercent = String((weighted*100).toFixed(2))+"%";
-    console.log(weighted);
+  //  console.log(weighted);
     document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
   else{
@@ -105,9 +100,6 @@ function calculateWeighted(){
 }
 
 function clearFields(){
-  // var allMarks = document.getElementsByName("mark");
-  // var allTotals = document.getElementsByName("total");
-  // var allWeights = document.getElementsByName("weight");
   var allPers = document.getElementsByName("per");
 
   for (var i = 0; i < allMarks.length; i++){
@@ -185,6 +177,7 @@ function percent4(){
   weightedButton.onclick = calculateWeighted;
   clearButton.onclick = clearFields;
 
+  //global variables
   var allWeights = document.getElementsByName("weight");
   var allMarks = document.getElementsByName("mark");
   var allTotals = document.getElementsByName("total");
