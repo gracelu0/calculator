@@ -7,8 +7,11 @@ function calculatePercentage(num,denom){
   //console.log(roundedPercent);
   //return roundedPercent;
 }
-function displayPercentage(percentString, box){
-  box.innerHTML = percentString;
+function displayPercentage(aMark,aTotal,box){
+  var p = calculatePercentage(aMark,aTotal);
+  var pString= String((p*100).toFixed(2))+"%";
+  console.log(pString);
+  box.innerHTML = pString;
 }
 //Need to do error checking! (e.g. total=0, negatives)
 function calculateMean(){
@@ -89,9 +92,7 @@ function clearFields(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
-  var pString= String((p*100).toFixed(2))+"%";
-  allTotals[0].onchange = displayPercentage(pString,allPers[0]);
+  allTotals[0].onchange = displayPercentage(allMarks[0].value,allTotals[0].value,allPers[0]);
 
   // for (var i = 0; i<allTotals.length;i++){
   //     var p = calculatePercentage(allMarks[i].value,allTotals[i].value);
