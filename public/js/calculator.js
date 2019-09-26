@@ -22,15 +22,6 @@ function checkNegative(aMark,aTotal){
   return true;
 }
 
-function checkWeight(aWeight){
-  if (aWeight.value < 0 || aWeight.value == ''){
-    aWeight.style.border = "1px solid red";
-  }
-  else{
-    aWeight.style.border = "";
-  }
-}
-
 function checkWeights(){
   var allWeights = document.getElementsByName("weight");
   var error = 0;
@@ -44,7 +35,7 @@ function checkWeights(){
     }
   }
   if (error == 1){
-    alert("Please fill in all weights (>0)");
+    alert("Please fill in all weights with values > 0");
     return false;
   }
   return true;
@@ -194,8 +185,3 @@ function percent4(){
   allTotals[1].oninput = percent2;
   allTotals[2].oninput = percent3;
   allTotals[3].oninput = percent4;
-
-  allWeights[0].oninput = checkWeights;
-  allWeights[1].oninput = checkWeights;
-  allWeights[2].oninput = checkWeights;
-  allWeights[3].oninput = checkWeights;
