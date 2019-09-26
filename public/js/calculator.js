@@ -29,7 +29,7 @@ function checkWeights(){
       error = 1;
     }
     else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
-      console.log("k: ", k, )
+      console.log("k: ", k);
       console.log(allMarks[k].value);
       console.log(allTotals[k].value);
       allWeights[k].style.border = "1px solid red";
