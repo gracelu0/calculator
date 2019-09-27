@@ -40,6 +40,7 @@ function validateGrades(){
   for (var i = 0; i < allTotals.length; i++){
     if ((allMarks[i].value < 0) || (allTotals[i].value <= 0)){
       //alert("Please enter a positive number");
+      console.log("negative, i: ", i);
       return false;
     }
   }
