@@ -134,21 +134,21 @@ function addRow(){
     }
     else if(i==2){
       var weightField = document.createElement("input");
-      button.setAttribute('type', 'number');
-      button.setAttribute('min', '0.1');
-      button.setAttribute('step',"0,1");
-      button.setAttribute('name', 'weight');
-      button.setAttribute('pattern', "/\d*[.,]?\d*$/");
+      weightField.setAttribute('type', 'number');
+      weightField.setAttribute('min', '0.1');
+      weightField.setAttribute('step',"0,1");
+      weightField.setAttribute('name', 'weight');
+      weightField.setAttribute('pattern', "/\d*[.,]?\d*$/");
 
       cell.appendChild(weightField);
 
     }
     else if(i==3){
       var markField = document.createElement("input");
-      button.setAttribute('type', 'number');
-      button.setAttribute('min', '0');
-      button.setAttribute('name', 'mark');
-      button.setAttribute('pattern', "/\d*[.,]?\d*$/");
+      markField.setAttribute('type', 'number');
+      markField.setAttribute('min', '0');
+      markField.setAttribute('name', 'mark');
+      markField.setAttribute('pattern', "/\d*[.,]?\d*$/");
 
       cell.appendChild(markField);
 
