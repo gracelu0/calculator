@@ -151,7 +151,8 @@ function addRow(){
       markField.setAttribute('pattern', "/\d*[.,]?\d*$/");
 
       cell.appendChild(markField);
-      cell.innerHTML = "/"+"<br>";
+      var text = document.createTextNode("/"+"<br>");
+      cell.appendChild(text);
 
       var totalField = document.createElement("input");
       totalField.setAttribute('type', 'number');
