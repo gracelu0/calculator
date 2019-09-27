@@ -136,7 +136,7 @@ function addRow(){
       var weightField = document.createElement("input");
       weightField.setAttribute('type', 'number');
       weightField.setAttribute('min', '0.1');
-      weightField.setAttribute('step',"0,1");
+      weightField.setAttribute('step',"0.1");
       weightField.setAttribute('name', 'weight');
       weightField.setAttribute('pattern', "/\d*[.,]?\d*$/");
 
@@ -151,6 +151,13 @@ function addRow(){
       markField.setAttribute('pattern', "/\d*[.,]?\d*$/");
 
       cell.appendChild(markField);
+
+      var totalField = document.createElement("input");
+      totalField.setAttribute('type', 'number');
+      totalField.setAttribute('min', '1');
+      totalField.setAttribute('name', 'total');
+      totalField.setAttribute('pattern', "/\d*[.,]?\d*$/");
+      cell.appendChild(totalField);
 
 
     }
