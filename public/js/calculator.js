@@ -36,13 +36,12 @@ function checkWeights(){
   return true;
 }
 
-function validateGrades(){
-  for (var i = 0; i < allTotals.length; i++){
-    if ((allMarks[i].value < 0) || (allTotals[i].value <= 0)){
-      //alert("Please enter a positive number");
-      console.log("negative, i: ", i);
-      return false;
-    }
+function validateGrades(aMark,aTotal){
+  if ((aMark.value < 0) || (aTotal.value <= 0)){
+        //alert("Please enter a positive number");
+        console.log("negative", aMark.value,aTotal.value);
+        return false;
+      }
   }
     return true;
 }
@@ -57,7 +56,7 @@ function calculateMean(){
   for (var i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
       console.log("both non-empty, i: ", i);
-      if (validateGrades()){
+      if (validateGrades(allMarks[i].value,allTotals[i].value)){
         sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
         numOfGrades++;
       }
