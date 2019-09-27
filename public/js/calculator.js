@@ -162,13 +162,19 @@ function addRow(){
       totalField.setAttribute('pattern', "/\d*[.,]?\d*$/");
       cell.appendChild(totalField);
 
-
     }
     else if(i==4){
       var percentBox = document.createElement("p");
       p.setAttribute('name','per');
     }
   }
+}
+
+function removeRow(){
+  var table = document.getElementById("inner");
+  var numOfRows = table.rows.length;
+  table.deleteRow(numOfRows);
+
 }
 
 function percent1(){
@@ -221,12 +227,14 @@ function percent4(){
   var weightedButton = document.getElementById("weighted");
   var clearButton = document.getElementById("clearAll");
   var addButton = document.getElementById("addRow");
+  var deleteButton = document.getElementById("deleteRow");
 
   meanButton.onclick = calculateMean;
   weightedButton.onclick = calculateWeighted;
   clearButton.onclick = clearFields;
   addButton.onclick = addRow;
-
+  deleteButton.onclick = removeRow;
+  
   //global variables
   var allWeights = document.getElementsByName("weight");
   var allMarks = document.getElementsByName("mark");
