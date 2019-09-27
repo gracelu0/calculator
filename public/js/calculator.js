@@ -125,6 +125,10 @@ function addRow(){
   for (var i = 0; i < 5; i++){
     var cell = document.createElement('td');
     cell = row.insertCell(i);
+
+    if (i==0){
+      cell.innerHTML = "Activity "+String(numOfRows-1);
+    }
   }
 }
 
