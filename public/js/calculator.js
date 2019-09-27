@@ -140,6 +140,23 @@ function addRow(){
       button.setAttribute('name', 'weight');
       button.setAttribute('pattern', "/\d*[.,]?\d*$/");
 
+      cell.appendChild(weightField);
+
+    }
+    else if(i==3){
+      var markField = document.createElement("input");
+      button.setAttribute('type', 'number');
+      button.setAttribute('min', '0');
+      button.setAttribute('name', 'mark');
+      button.setAttribute('pattern', "/\d*[.,]?\d*$/");
+
+      cell.appendChild(markField);
+
+
+    }
+    else if(i==4){
+      var percentBox = document.createElement("p");
+      p.setAttribute('name','per');
     }
   }
 }
