@@ -172,8 +172,7 @@ function addRow(){
 
 function removeRow(){
   var table = document.getElementById("inner");
-  var numOfRows = table.rows.length;
-  table.deleteRow(numOfRows);
+  table.deleteRow(-1);
 
 }
 
@@ -234,7 +233,7 @@ function percent4(){
   clearButton.onclick = clearFields;
   addButton.onclick = addRow;
   deleteButton.onclick = removeRow;
-  
+
   //global variables
   var allWeights = document.getElementsByName("weight");
   var allMarks = document.getElementsByName("mark");
