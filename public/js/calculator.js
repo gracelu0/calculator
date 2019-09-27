@@ -41,10 +41,10 @@ function validateGrades(aMark,aTotal){
         //alert("Please enter a positive number");
         console.log("negative", aMark.value,aTotal.value);
         return false;
-      }
   }
-    return true;
+  return true;
 }
+
 
 function calculateMean(){
   var numOfGrades = 0;
