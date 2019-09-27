@@ -221,6 +221,10 @@ function percent4(){
   }
 }
 
+function test(){
+  console.log("row: ", this.parentNode.rowIndex);
+}
+
 
   var meanButton = document.getElementById("mean");
   var weightedButton = document.getElementById("weighted");
@@ -240,6 +244,7 @@ function percent4(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
+  allMarks[0].onclick = test;
   allMarks[0].oninput = percent1;
   allMarks[1].oninput = percent2;
   allMarks[2].oninput = percent3;
