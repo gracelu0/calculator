@@ -36,16 +36,6 @@ function checkWeights(){
   return true;
 }
 
-function validateGrades(aMark,aTotal){
-  if ((aMark.value < 0) || (aTotal.value <= 0)){
-        //alert("Please enter a positive number");
-        console.log("negative", aMark.value,aTotal.value);
-        return false;
-  }
-  return true;
-}
-
-
 function calculateMean(){
   var numOfGrades = 0;
   var sumOfMeans = 0;
@@ -128,6 +118,15 @@ function clearFields(){
   document.getElementById("result").innerHTML = "";
 }
 
+function addRow(){
+  var table = document.getElementById("inner");
+  var numOfRows = table.rows.length;
+  var row = table.insertRow(numOfRows);
+  for (var i = 0; i < 5; i++){
+    var cell = document.createElement('td');
+    cell = row.insertCell(i);
+  }
+}
 
 function percent1(){
     if (checkInputs(allMarks[0].value,allTotals[0].value)){
@@ -178,10 +177,12 @@ function percent4(){
   var meanButton = document.getElementById("mean");
   var weightedButton = document.getElementById("weighted");
   var clearButton = document.getElementById("clearAll");
+  var addButton = document.getElementById("addRow");
 
   meanButton.onclick = calculateMean;
   weightedButton.onclick = calculateWeighted;
   clearButton.onclick = clearFields;
+  addButton.onclick = addRow;
 
   //global variables
   var allWeights = document.getElementsByName("weight");

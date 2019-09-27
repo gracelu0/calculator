@@ -52,7 +52,7 @@ h1 {
   vertical-align: middle;
 }
 
-#weighted,#mean,#clearAll{
+#weighted,#mean,#clearAll,#addRow{
   background-color: #CC0633;
   font-family: "Arial", sans-serif;
   color: white;
@@ -65,7 +65,7 @@ h1 {
     display: inline-block;
 }
 
-#weighted:hover, #mean:hover, #clearAll:hover{
+#weighted:hover, #mean:hover, #clearAll:hover, #addRow:hover{
   background-color: LightCoral;
   cursor:pointer;
 }
