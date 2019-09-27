@@ -127,7 +127,19 @@ function addRow(){
     cell = row.insertCell(i);
 
     if (i==0){
-      cell.innerHTML = "Activity "+String(numOfRows-1);
+      cell.innerHTML = "Activity "+String(numOfRows);
+    }
+    else if(i==1){
+      cell.innerHTML = "A"+String(numOfRows);
+    }
+    else if(i==2){
+      var weightField = document.createElement("input");
+      button.setAttribute('type', 'number');
+      button.setAttribute('min', '0.1');
+      button.setAttribute('step',"0,1");
+      button.setAttribute('name', 'weight');
+      button.setAttribute('pattern', "/\d*[.,]?\d*$/");
+
     }
   }
 }
