@@ -56,7 +56,7 @@ function calculateMean(){
   for (var i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
       console.log("both non-empty, i: ", i);
-      if (validateGrades(allMarks[i].value,allTotals[i].value)){
+      if (allMarks[i].checkValidity() && allTotals[i].checkValidity()){
         sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
         numOfGrades++;
       }
