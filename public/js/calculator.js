@@ -15,6 +15,9 @@ function checkWeights(){
   var allWeights = document.getElementsByName("weight");
   var error = 0;
   for (k = 0; k < allWeights.length; k++){
+    if (!allWeights[k].checkValidity()){
+      error = 1;
+    }
     if (allWeights[k].value != '' && allWeights[k].value <= 0){
       error = 1;
     }
@@ -27,7 +30,7 @@ function checkWeights(){
     }
   }
   if (error == 1){
-    alert("Please fill in all weights with values > 0");
+    alert("Please fill in all weights with valid values");
     return false;
   }
   return true;
