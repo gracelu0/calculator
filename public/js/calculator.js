@@ -149,6 +149,7 @@ function addRow(){
       markField.setAttribute('min', '0');
       markField.setAttribute('name', 'mark');
       markField.setAttribute('pattern', "/\d*[.,]?\d*$/");
+      markField.addEventListener("input",callPercent);
 
       cell.appendChild(markField);
       var text = document.createTextNode("/");
@@ -160,6 +161,7 @@ function addRow(){
       totalField.setAttribute('min', '1');
       totalField.setAttribute('name', 'total');
       totalField.setAttribute('pattern', "/\d*[.,]?\d*$/");
+      totalField.addEventListener("input",callPercent);
       cell.appendChild(totalField);
 
     }
