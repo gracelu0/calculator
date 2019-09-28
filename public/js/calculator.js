@@ -36,6 +36,21 @@ function checkWeights(){
   return true;
 }
 
+function checkGrades(){
+  for (var i = 0; i < allTotals.length;i++){
+    //only 1/2 fields are filled
+    if (allMarks[i].value != '' && allTotals[i].value == ''){
+      console.log("total empty, i: ", i);
+      allTotals[k].style.border = "1px solid red";
+
+    }
+    else if (allMarks[i].value == '' && allTotals[i].value != ''){
+      allMarks[k].style.border = "1px solid red";
+
+    }
+  }
+}
+
 function calculateMean(){
   var numOfGrades = 0;
   var sumOfMeans = 0;
