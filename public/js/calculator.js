@@ -165,7 +165,7 @@ function addRow(){
     }
     else if(i==4){
       var percentBox = document.createElement("p");
-      p.setAttribute('name','per');
+      percentBox.setAttribute('name','per');
     }
   }
 }
@@ -176,50 +176,50 @@ function removeRow(){
 
 }
 
-function percent1(){
-    if (checkInputs(allMarks[0].value,allTotals[0].value)){
-      var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
-      var pString= String((p*100).toFixed(2))+"%";
-      allPers[0].innerHTML = pString;
-    }
-    else{
-      allPers[0].innerHTML = '';
-    }
-
-}
-
-function percent2(){
-  if (checkInputs(allMarks[1].value,allTotals[1].value)){
-    var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    allPers[1].innerHTML = pString;
-  }
-  else{
-    allPers[1].innerHTML = '';
-  }
-}
-
-function percent3(){
-  if (checkInputs(allMarks[2].value,allTotals[2].value)){
-    var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    allPers[2].innerHTML = pString;
-  }
-  else{
-      allPers[2].innerHTML = '';
-  }
-}
-
-function percent4(){
-  if (checkInputs(allMarks[3].value,allTotals[3].value)){
-    var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
-    var pString= String((p*100).toFixed(2))+"%";
-    allPers[3].innerHTML = pString;
-  }
-  else{
-      allPers[3].innerHTML = '';
-  }
-}
+// function percent1(){
+//     if (checkInputs(allMarks[0].value,allTotals[0].value)){
+//       var p = calculatePercentage(allMarks[0].value,allTotals[0].value);
+//       var pString= String((p*100).toFixed(2))+"%";
+//       allPers[0].innerHTML = pString;
+//     }
+//     else{
+//       allPers[0].innerHTML = '';
+//     }
+//
+// }
+//
+// function percent2(){
+//   if (checkInputs(allMarks[1].value,allTotals[1].value)){
+//     var p = calculatePercentage(allMarks[1].value,allTotals[1].value);
+//     var pString= String((p*100).toFixed(2))+"%";
+//     allPers[1].innerHTML = pString;
+//   }
+//   else{
+//     allPers[1].innerHTML = '';
+//   }
+// }
+//
+// function percent3(){
+//   if (checkInputs(allMarks[2].value,allTotals[2].value)){
+//     var p = calculatePercentage(allMarks[2].value,allTotals[2].value);
+//     var pString= String((p*100).toFixed(2))+"%";
+//     allPers[2].innerHTML = pString;
+//   }
+//   else{
+//       allPers[2].innerHTML = '';
+//   }
+// }
+//
+// function percent4(){
+//   if (checkInputs(allMarks[3].value,allTotals[3].value)){
+//     var p = calculatePercentage(allMarks[3].value,allTotals[3].value);
+//     var pString= String((p*100).toFixed(2))+"%";
+//     allPers[3].innerHTML = pString;
+//   }
+//   else{
+//       allPers[3].innerHTML = '';
+//   }
+// }
 
 function percent(index){
   if (checkInputs(allMarks[index].value,allTotals[index].value)){
