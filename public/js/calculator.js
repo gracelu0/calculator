@@ -222,7 +222,7 @@ function percent4(){
 }
 
 function test(){
-  console.log("row: ", this.parentNode.parentNode.rowIndex);
+  console.log("row: ", this.parentNode.parentNode.parentNode.rowIndex);
 }
 
 
