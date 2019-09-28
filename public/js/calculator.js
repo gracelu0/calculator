@@ -104,27 +104,39 @@ function calculateWeighted(){
   var sum = 0;
   var weighted = 0;
   var weightedPercent = "";
-
+  var negatives = 0;
   if(!checkGrades()){
     alert("Please fill in mark/total fields");
   }
 
-  //check if weight negative or empty
-  if (checkWeights()){
-    for (var i = 0; i < allTotals.length;i++){
-      if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
-        grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
-        sum+= parseFloat(grade*allWeights[i].value);
-        totalWeight+=parseFloat(allWeights[i].value);
+  for (var i = 0; i < allTotals.length;i++){
+    if (allMarks[i].value != '' && allTotals[i].value != ''){
+      if (!allMarks[i].checkValidity() || !allTotals[i].checkValidity()){
+        alert("Please enter positive values");
+        negatives = 1;
       }
     }
-    weighted = sum/totalWeight;
-    weightedPercent = String((weighted*100).toFixed(2))+"%";
-    document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
   }
-  else{
-    document.getElementById("result").innerHTML = 'Error: invalid weights';
+
+  //check if weight negative or empty
+  if (negatives == 0){
+    if (checkWeights()){
+      for (var i = 0; i < allTotals.length;i++){
+        if (allWeights[i].value > 0 && allMarks[i].value != '' && allTotals[i].value != ''){
+          grade = parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
+          sum+= parseFloat(grade*allWeights[i].value);
+          totalWeight+=parseFloat(allWeights[i].value);
+        }
+      }
+      weighted = sum/totalWeight;
+      weightedPercent = String((weighted*100).toFixed(2))+"%";
+      document.getElementById("result").innerHTML = "Your weighted grade is: "+ weightedPercent;
+    }
+    else{
+      document.getElementById("result").innerHTML = 'Error: invalid weights';
+    }
   }
+
 
 }
 
