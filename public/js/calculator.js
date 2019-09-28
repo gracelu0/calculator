@@ -162,6 +162,7 @@ function addRow(){
       weightField.setAttribute('step',"0.1");
       weightField.setAttribute('name', 'weight');
       weightField.setAttribute('pattern', "/\d*[.,]?\d*$/");
+      weightField.addEventListener("input",resetBorders);
 
       cell.appendChild(weightField);
 
