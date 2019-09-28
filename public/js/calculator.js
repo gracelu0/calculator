@@ -221,7 +221,20 @@ function percent4(){
   }
 }
 
-function test(){
+function percent(index){
+  if (checkInputs(allMarks[index].value,allTotals[index].value)){
+    var p = calculatePercentage(allMarks[index].value,allTotals[index].value);
+    var pString= String((p*100).toFixed(2))+"%";
+    allPers[index].innerHTML = pString;
+  }
+  else{
+      allPers[index].innerHTML = '';
+  }
+}
+
+function callPercent(){
+  rowNum = (this.parentNode.parentNode.parentNode.rowIndex)-1;
+  percent(rowNum);
   console.log("row: ", this.parentNode.parentNode.parentNode.rowIndex);
 }
 
@@ -244,13 +257,14 @@ function test(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  allMarks[0].addEventListener("click",test);
-  allMarks[0].oninput = percent1;
+  allMarks[0].addEventListener("input",callPercent);
+  allTotals[0].addEventListener("input",callPercent);
+  //allMarks[0].oninput = percent1;
   allMarks[1].oninput = percent2;
   allMarks[2].oninput = percent3;
   allMarks[3].oninput = percent4;
 
-  allTotals[0].oninput = percent1;
+  //allTotals[0].oninput = percent1;
   allTotals[1].oninput = percent2;
   allTotals[2].oninput = percent3;
   allTotals[3].oninput = percent4;
