@@ -41,11 +41,11 @@ function checkGrades(){
     //only 1/2 fields are filled
     if (allMarks[i].value != '' && allTotals[i].value == ''){
       console.log("total empty, i: ", i);
-      allTotals[k].style.border = "1px solid red";
+      allTotals[i].style.border = "1px solid red";
 
     }
     else if (allMarks[i].value == '' && allTotals[i].value != ''){
-      allMarks[k].style.border = "1px solid red";
+      allMarks[i].style.border = "1px solid red";
 
     }
   }
@@ -197,7 +197,6 @@ function removeRow(){
   if (table.rows.length>1){
     table.deleteRow(-1);
   }
-
 
 }
 
