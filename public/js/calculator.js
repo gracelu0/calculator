@@ -168,6 +168,8 @@ function addRow(){
     else if(i==4){
       var percentBox = document.createElement("p");
       percentBox.setAttribute('name','per');
+      cell.appendChild(percentBox);
+      console.log("allPers.length: ",allPers.length);
       allPers = document.getElementsByName('per');
       console.log("allPers.length: ",allPers.length);
 
