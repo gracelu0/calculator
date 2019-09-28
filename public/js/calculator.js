@@ -58,6 +58,8 @@ function calculateMean(){
   var meanPercent = "";
   var error = 0;
 
+  checkGrades();
+
   for (var i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
       console.log("both non-empty, i: ", i);
@@ -192,7 +194,10 @@ function addRow(){
 
 function removeRow(){
   var table = document.getElementById("inner");
-  table.deleteRow(-1);
+  if (table.rows.length>1){
+    table.deleteRow(-1);
+  }
+
 
 }
 
