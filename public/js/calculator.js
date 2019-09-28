@@ -257,17 +257,23 @@ function callPercent(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  allMarks[0].addEventListener("input",callPercent);
-  allTotals[0].addEventListener("input",callPercent);
-  //allMarks[0].oninput = percent1;
-  allMarks[1].oninput = percent2;
-  allMarks[2].oninput = percent3;
-  allMarks[3].oninput = percent4;
+  //add event listeners
+  for (var i = 0; i < allMarks.length; i++){
+    allMarks[i].addEventListener("input",callPercent);
+    allTotals[i].addEventListener("input",callPercent);
+  }
 
-  //allTotals[0].oninput = percent1;
-  allTotals[1].oninput = percent2;
-  allTotals[2].oninput = percent3;
-  allTotals[3].oninput = percent4;
+  // allMarks[0].addEventListener("input",callPercent);
+  // allTotals[0].addEventListener("input",callPercent);
+  // //allMarks[0].oninput = percent1;
+  // allMarks[1].oninput = percent2;
+  // allMarks[2].oninput = percent3;
+  // allMarks[3].oninput = percent4;
+  //
+  // //allTotals[0].oninput = percent1;
+  // allTotals[1].oninput = percent2;
+  // allTotals[2].oninput = percent3;
+  // allTotals[3].oninput = percent4;
 
   // allWeights[0].oninput = checkWeights;
   // allWeights[1].oninput = checkWeights;
