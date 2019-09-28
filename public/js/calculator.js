@@ -244,7 +244,7 @@ function test(){
   var allTotals = document.getElementsByName("total");
   var allPers = document.getElementsByName("per");
 
-  allMarks[0].onclick = test;
+  allMarks[0].addEventListener("click",test);
   allMarks[0].oninput = percent1;
   allMarks[1].oninput = percent2;
   allMarks[2].oninput = percent3;
