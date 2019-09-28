@@ -168,6 +168,7 @@ function addRow(){
     else if(i==4){
       var percentBox = document.createElement("p");
       percentBox.setAttribute('name','per');
+      console.log("allPers.length: ",allPers.length);
     }
   }
 }
