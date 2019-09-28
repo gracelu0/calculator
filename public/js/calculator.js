@@ -19,9 +19,6 @@ function checkWeights(){
       error = 1;
     }
     else if (allWeights[k].value == '' && allMarks[k].value != '' && allTotals[k].value != ''){
-      // console.log("k: ", k);
-      // console.log(allMarks[k].value);
-      // console.log(allTotals[k].value);
       allWeights[k].style.border = "1px solid red";
       error = 1;
     }
@@ -66,7 +63,6 @@ function calculateMean(){
 
   for (var i = 0; i < allTotals.length;i++){
     if (allMarks[i].value != '' && allTotals[i].value != ''){
-      console.log("both non-empty, i: ", i);
       if (allMarks[i].checkValidity() && allTotals[i].checkValidity()){
         sumOfMeans+=parseFloat(calculatePercentage(allMarks[i].value,allTotals[i].value));
         numOfGrades++;
@@ -75,7 +71,6 @@ function calculateMean(){
         error = 1;
       }
     }
-    console.log("error: ",error);
   }
   if (error == 0){
     mean = sumOfMeans/numOfGrades;
@@ -205,6 +200,8 @@ function removeRow(){
 }
 
 function percent(index){
+  checkGrades();
+  
   if (checkInputs(allMarks[index].value,allTotals[index].value)){
     var p = calculatePercentage(allMarks[index].value,allTotals[index].value);
     var pString= String((p*100).toFixed(2))+"%";
@@ -252,20 +249,3 @@ function newRowCallPercent(){
     allMarks[i].addEventListener("input",callPercent);
     allTotals[i].addEventListener("input",callPercent);
   }
-
-  // allMarks[0].addEventListener("input",callPercent);
-  // allTotals[0].addEventListener("input",callPercent);
-  // //allMarks[0].oninput = percent1;
-  // allMarks[1].oninput = percent2;
-  // allMarks[2].oninput = percent3;
-  // allMarks[3].oninput = percent4;
-  //
-  // //allTotals[0].oninput = percent1;
-  // allTotals[1].oninput = percent2;
-  // allTotals[2].oninput = percent3;
-  // allTotals[3].oninput = percent4;
-
-  // allWeights[0].oninput = checkWeights;
-  // allWeights[1].oninput = checkWeights;
-  // allWeights[2].oninput = checkWeights;
-  // allWeights[3].oninput = checkWeights;
