@@ -42,10 +42,12 @@ function checkGrades(){
     if (allMarks[i].value != '' && allTotals[i].value == ''){
       console.log("total empty, i: ", i);
       allTotals[i].style.border = "1px solid red";
+      return false;
 
     }
     else if (allMarks[i].value == '' && allTotals[i].value != ''){
       allMarks[i].style.border = "1px solid red";
+      return false;
 
     }
     else{
@@ -53,6 +55,7 @@ function checkGrades(){
       allTotals[i].style.border = "";
     }
   }
+  return true;
 }
 
 function resetBorders(){
@@ -101,6 +104,10 @@ function calculateWeighted(){
   var sum = 0;
   var weighted = 0;
   var weightedPercent = "";
+
+  if(!checkGrades()){
+    alert("Please fill in mark/total fields");
+  }
 
   //check if weight negative or empty
   if (checkWeights()){
