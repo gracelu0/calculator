@@ -19,6 +19,7 @@ h1 {
   font-size: 18px;
   color: #CC0633;
   display: inline-block;
+  font-weight:bold;
 }
 
 #headings,#instruct, #result,#inner td, #inner th{
