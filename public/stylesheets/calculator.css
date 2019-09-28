@@ -61,6 +61,15 @@ h1 {
   display: inline-block;
 }
 
+#addRow,#deleteRow{
+  background-color: #CC0633;
+  font-family: "Arial", sans-serif;
+  color: white;
+  font-size: 12px;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
 #sub{
     display: inline-block;
 }
