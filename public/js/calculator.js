@@ -258,4 +258,5 @@ function newRowCallPercent(){
   for (var i = 0; i < allMarks.length; i++){
     allMarks[i].addEventListener("input",callPercent);
     allTotals[i].addEventListener("input",callPercent);
+    allWeights[i].addEventListener("input",resetBorders);
   }
