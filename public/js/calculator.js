@@ -52,6 +52,15 @@ function checkGrades(){
   }
 }
 
+function resetBorders(){
+  for (var i = 0; i < allTotals.length;i++){
+    allMarks[i].style.border = "";
+    allTotals[i].style.border = "";
+    allWeights[i].style.border = "";
+
+  }
+}
+
 function calculateMean(){
   var numOfGrades = 0;
   var sumOfMeans = 0;
@@ -200,8 +209,8 @@ function removeRow(){
 }
 
 function percent(index){
-  checkGrades();
-  
+  resetBorders();
+
   if (checkInputs(allMarks[index].value,allTotals[index].value)){
     var p = calculatePercentage(allMarks[index].value,allTotals[index].value);
     var pString= String((p*100).toFixed(2))+"%";
