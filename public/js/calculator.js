@@ -48,6 +48,10 @@ function checkGrades(){
       allMarks[i].style.border = "1px solid red";
 
     }
+    else{
+      allMarks[i].style.border = "";
+      allTotals[i].style.border = "";
+    }
   }
 }
 
