@@ -149,7 +149,7 @@ function addRow(){
       markField.setAttribute('min', '0');
       markField.setAttribute('name', 'mark');
       markField.setAttribute('pattern', "/\d*[.,]?\d*$/");
-      markField.addEventListener("input",callPercent);
+      markField.addEventListener("input",newRowCallPercent);
 
       cell.appendChild(markField);
       var text = document.createTextNode("/");
@@ -161,7 +161,7 @@ function addRow(){
       totalField.setAttribute('min', '1');
       totalField.setAttribute('name', 'total');
       totalField.setAttribute('pattern', "/\d*[.,]?\d*$/");
-      totalField.addEventListener("input",callPercent);
+      totalField.addEventListener("input",newRowCallPercent);
       cell.appendChild(totalField);
 
     }
@@ -238,6 +238,13 @@ function callPercent(){
   rowNum = (this.parentNode.parentNode.parentNode.rowIndex)-1;
   percent(rowNum);
   console.log("row: ", this.parentNode.parentNode.parentNode.rowIndex);
+}
+
+function newRowCallPercent(){
+  rowNum = (this.parentNode.parentNode.rowIndex)-1;
+  percent(rowNum);
+  console.log("row: ", this.parentNode.parentNode.parentNode.rowIndex);
+
 }
 
 
